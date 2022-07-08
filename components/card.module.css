@@ -1,6 +1,6 @@
 .card {
   border: 1px solid var(--color-border);
-  width: 400px;
+  width: 350px;
   height: 180px;
   border-radius: 25px;
   cursor: pointer;
@@ -11,9 +11,9 @@
   border-start-end-radius: 25px;
   background-color: var(--color-dark);
   color: var(--color-detail);
-
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .card_body {
   height: 80px;
