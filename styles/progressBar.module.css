@@ -9,11 +9,11 @@
   display: flex;
   /* height: 75vh; */
   padding: 30px;
-  background-color: black;
+  background-color: silver;
 }
 
 .comment {
-  background-color: greenyellow;
+  background-color: #ededed;
   border: 1px solid black;
   max-width: 500px;
 }
@@ -102,13 +102,16 @@
   transition: 0.5s;
   text-align: end;
 }
-.barra_progresso span {
+.container_progress_bar span {
   color: white;
   font-weight: "bold";
   padding: 5px;
 }
 
-.container_progresso {
+.container_progress_bar {
   display: flex;
   justify-content: center;
+}
+.comments {
+  margin-bottom: 50px;
 }

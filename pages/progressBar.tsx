@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useState } from "react";
 import styles from "../styles/progressBar.module.css";
 
@@ -17,32 +18,34 @@ const progressBar = () => {
         { name: "Gabriel", comment: "This is a comment" },
         { name: "Fernando", comment: "Video Top" },
       ],
-      watched: false
+      watched: false,
     },
     {
       title: "video 02",
       // url: "https://www.loom.com/embed/9f5183473ba74c3aaa3a6fa557054718",
       comments: [],
-      watched: false
+      watched: false,
     },
     {
       title: "video 03",
       //  url: "https://www.loom.com/embed/1d9a969717f543d8894ee5d0f7cab4e8",
       comments: [],
-      watched: true
+      watched: true,
     },
   ];
 
   const percentual = () => {
     const videosWhatched = videos.filter((video) => {
       if (video.watched) {
-        return video
+        return video;
       }
-    })
+    });
 
-    const percentual = Math.floor((videosWhatched.length / videos.length) * 100);
+    const percentual = Math.floor(
+      (videosWhatched.length / videos.length) * 100
+    );
     return percentual;
-  }
+  };
 
   const onClickSetVideo = (video: number) => {
     console.log(video);
@@ -60,7 +63,7 @@ const progressBar = () => {
     } else {
       setClassList("list_hide");
     }
-  }
+  };
 
   return (
     <>
@@ -72,13 +75,17 @@ const progressBar = () => {
         ></iframe>
         <div className={styles.accordions}>
           <div className={styles.accordion_item}>
-
-            <div onClick={onClickModule} className={styles.module}>Modulo 1</div>
+            <div onClick={onClickModule} className={styles.module}>
+              Modulo 1
+            </div>
 
             <ul className={styles.classList}>
               {videos.map((video, index) => (
                 <li key={index} className={styles.listItem}>
-                  <button className={styles.btn} onClick={() => onClickSetVideo(index)}>
+                  <button
+                    className={styles.btn}
+                    onClick={() => onClickSetVideo(index)}
+                  >
                     {video.title}
                   </button>
                   <input
@@ -104,15 +111,18 @@ const progressBar = () => {
             </div>
           ))}
       </div>
-      <div className={styles.container_progresso}>
+      <div className={styles.container_progress_bar}>
         <div className={styles.progresso}>
-          <div className={styles.barra_progresso} style={{ width: `${percentual()}%` }}>
-            <span >{`${percentual()}%`}</span>
+          <div
+            className={styles.barra_progresso}
+            style={{ width: `${percentual()}%` }}
+          >
+            <span>{`${percentual()}%`}</span>
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default progressBar;
